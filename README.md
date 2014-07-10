@@ -1,6 +1,5 @@
 # 使用clojure开发的
-
-FIXME
+    学习clojure.
 
 ## Prerequisites
 
@@ -15,5 +14,7 @@ To start a web server for the application, run:
     lein ring server
 
 ## License
+
+femg
 
 Copyright © 2014 FIXME
