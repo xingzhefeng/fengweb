@@ -1,0 +1,51 @@
+{% extends "myweb/views/templates/base.html" %}
+{% block content %}
+<div>
+    <h1>Clojure：解决Selmer与AngularJS的标签混淆问题</h1>
+    <div id="content_info">
+        <span id="info"></span>
+        2014/6/15 8:40:20
+    </div><div class="guidead"><script type="text/javascript">                                                   BAIDU_CLB_fillSlot("600387");</script></div>
+    <div id="content_art">
+        <div class="ad_content_right"><script type="text/javascript">BAIDU_CLB_fillSlot("600386");</script></div>
+        <p>Selmer是Clojure的一个模板类库，下面是它的一个DEMO模板：</p>
+        <div class="haogongju_code">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ul</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+{ % for item in items %}
+</span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>{-{item}}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+{ % endfor %}
+</span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000ff;">&gt;</span></pre>
+        </div>
+        <p>很明显，它的{-{}}的写法很容易和AngularJS混淆起来。为了解决这个问题，我们可以在它的生成模板语句中更改它的tag，通过自定义:tag-open和:tag-close即可。示例代码如下：</p>
+        <div class="haogongju_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #000000;">(ns fycoins.views.layout
+</span><span style="color: #008080;"> 2</span>   (:require <span style="color: #800000; font-weight: bold;">[</span><span style="color: #800000;">selmer.parser :as parser</span><span style="color: #800000; font-weight: bold;">]</span>
+<span style="color: #008080;"> 3</span> <span style="color: #000000;">            ))
+</span><span style="color: #008080;"> 4</span>
+<span style="color: #008080;"> 5</span> (def template-folder "fycoins/views/templates/"<span style="color: #000000;">)
+</span><span style="color: #008080;"> 6</span>
+<span style="color: #008080;"> 7</span> (defn render <span style="color: #800000; font-weight: bold;">[</span><span style="color: #800000;">template &amp; [params</span><span style="color: #800000; font-weight: bold;">]</span><span style="color: #000000;">]
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">  (parser/render-file (str template-folder template)
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">                      params
+</span><span style="color: #008080;">10</span>                       {:tag-open \<span style="color: #800000; font-weight: bold;">[
+</span><span style="color: #008080;">11</span>                        :tag-close \]}))</pre>
+        </div>
+        <p>这样，我们的模板文件就可以写成这样：</p>
+        <div class="haogongju_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 2</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">="UTF-8"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">link </span><span style="color: #ff0000;">rel</span><span style="color: #0000ff;">="stylesheet"</span><span style="color: #ff0000;"> href</span><span style="color: #0000ff;">="[{context}]/css/screen.css"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;"> 7</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 8</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 9</span> <span style="color: #000000;">Home
+</span><span style="color: #008080;">10</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+        </div><br/>
+
+
+</div>
+{% endblock %}
+

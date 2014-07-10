@@ -1,0 +1,195 @@
+.highlight {
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    border-radius: 4px;
+}
+/*yingyang*/
+#yin-yang {
+    width: 96px;
+    height: 48px;
+    background: #eee;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+    -webkit-box-sizing:content-box;
+}
+
+#yin-yang:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #eee;
+    border: 18px solid red;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    -webkit-box-sizing:content-box;
+}
+
+#yin-yang:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: red;
+    border: 18px solid #eee;
+    border-radius:100%;
+    width: 12px;
+    height: 12px;
+    -webkit-box-sizing:content-box;
+}
+/*yingyang end*/
+/*bigbagua start*/
+.bagua {
+    height: 300px;
+    width: 300px;
+    text-align: center;
+}
+.bagua .dir {
+    position:absolute;
+    height:124px;
+    width: 300px;
+    background: #aaa;
+    transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    clear: both;
+    margin: auto;
+}
+.bagua > .dir {
+    position: relative;
+    top: 89px;
+}
+.left,.right{
+    line-height: 124px;
+    position: relative;
+    z-index: 1;
+}
+.left {
+    float: left;
+    transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+.right {
+    float: right;
+    transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    text-direction: left;
+}
+.mirror {
+    clear: both;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    top: -15px;
+    left: -50px;
+}
+.mirror .dir {
+    background: orange;
+    height:83px;
+    width: 200px;
+}
+.era,.zodiac,.yinyang_fish,.fish_semicircle,.yang_fish,.yin_fish,.fish_eye {
+    border-radius:50%;
+    -o-border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    margin: auto;
+    position:relative;
+}
+.era {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    top: -34px;
+    left: 25px;
+}
+.era .dir {
+    width: 150px;
+    height: 150px;
+    transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    background: transparent;
+}
+.era .left,.era .right {
+    line-height: 150px;
+}
+.zodiac {
+    width: 100px;
+    height: 100px;
+    top: 25px;
+    left: 25px;
+}
+
+.zodiac .dir {
+    width: 100px;
+    height: 100px;
+    transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    position: absolute;
+    clear: both;
+}
+.zodiac .left,.zodiac .right {
+    line-height: 100px;
+}
+.yinyang_fish {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    background:linear-gradient(left, white 49%, #333 51%);
+    background:-o-linear-gradient(left, white 49%, #333 51%);
+    background:-moz-linear-gradient(left, white 49%, #333 51%);
+    background:-webkit-linear-gradient(left, white 49%, #333 51%);
+}
+.yang_fish,.yin_fish {
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(#333 19%, white 21%);
+    background: -o-radial-gradient(#333 19%, white 21%);
+    background: -moz-radial-gradient(#333 19%, white 21%);
+    background: -webkit-radial-gradient(#333 19%, white 21%);
+}
+.yin_fish {
+    background: radial-gradient(white 19%, #333 21%);
+    background: -o-radial-gradient(white 19%, #333 21%);
+    background: -moz-radial-gradient(white 19%, #333 21%);
+    background: -webkit-radial-gradient(white 19%, #333 21%);
+}
+.solid,.dashed {
+    width: 100%;
+    height: 3px;
+    background: #333;
+    margin: 5px;
+}
+.dashed {
+    background: linear-gradient(left, #333 45%, transparent 46%, transparent 54%, #333 55%);
+    background: -o-linear-gradient(left, #333 45%, transparent 46%, transparent 54%, #333 55%);
+    background: -moz-linear-gradient(left, #333 45%, transparent 46%, transparent 54%, #333 55%);
+    background: -webkit-linear-gradient(left, #333 45%, transparent 46%, transparent 54%, #333 55%);
+}
+.left.divination {
+    width: 50px;
+    top: 41px;
+    left: -10px;
+}
+.right.divination {
+    width: 50px;
+    top: 53px;
+    left: 10px;
+}
+/*bigbagua end*/

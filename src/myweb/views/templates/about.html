@@ -1,0 +1,166 @@
+{% extends "myweb/views/templates/base.html" %}
+{% block content %}
+这个模板所用语法 https://docs.djangoproject.com/en/1.4/topics/templates/ 模仿了这个的.大部分都可以.但有
+部分不行,例如 value|striptags
+<br/>
+        luminusweb 模板主要使用了 https://github.com/yogthos/Selmer.git
+<br/>
+Automatic HTML escaping.
+This will be escaped: {-{ data }}
+This will not be escaped: {-{ data|safe }}
+<br/>
+上面为了显示我就在两个中括号之间加了-
+<div id="yin-yang"></div>
+{{ value|default:"nothing" }} {{value|safe}} {{ name|length }}
+<p>{{name}}  :水深则流缓,语迟则人贵. 文字上的智慧 与真正的自身拥有的智慧 是有差别的.</p>
+<div class="highlight" style="width: 80px;">
+    <div class="solid"></div>
+    <div class="solid"></div>
+    <div class="dashed"></div>
+    <div class="solid"></div>
+    <div class="solid"></div>
+    <div class="dashed"></div>
+</div>
+<div class="highlight" style="width: 80px;">
+    <div class="dashed"></div>
+    <div class="solid"></div>
+    <div class="dashed"></div>
+    <div class="dashed"></div>
+    <div class="solid"></div>
+    <div class="dashed"></div>
+</div>
+  <!--bigbagua-->
+<div class="bagua">
+    <div class="dir">
+        <div class="left">兑</div><div class="right">艮</div>
+        <div class="left divination">
+            <div class="solid"></div>
+            <div class="solid"></div>
+            <div class="dashed"></div>
+        </div>
+        <div class="right divination">
+            <div class="dashed"></div>
+            <div class="dashed"></div>
+            <div class="solid"></div>
+        </div>
+        <div class="dir">
+            <div class="left">乾</div><div class="right">坤</div>
+            <div class="left divination">
+                <div class="solid"></div>
+                <div class="solid"></div>
+                <div class="solid"></div>
+            </div>
+            <div class="right divination">
+                <div class="dashed"></div>
+                <div class="dashed"></div>
+                <div class="dashed"></div>
+            </div>
+            <div class="dir">
+                <div class="left">巽</div><div class="right">震</div>
+                <div class="left divination">
+                    <div class="dashed"></div>
+                    <div class="solid"></div>
+                    <div class="solid"></div>
+                </div>
+                <div class="right divination">
+                    <div class="solid"></div>
+                    <div class="dashed"></div>
+                    <div class="dashed"></div>
+                </div>
+                <div class="dir">
+                    <div class="left">离</div><div class="right">坎</div>
+                    <div class="left divination">
+                        <div class="dashed"></div>
+                        <div class="solid"></div>
+                        <div class="dashed"></div>
+                    </div>
+                    <div class="right divination">
+                        <div class="solid"></div>
+                        <div class="dashed"></div>
+                        <div class="solid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mirror">
+        <div class="dir">
+            <div class="dir">
+                <div class="dir">
+                    <div class="dir">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="era">
+            <div class="dir">
+                <div class="left">辛</div><div class="right">乙</div>
+                <div class="dir">
+                    <div class="left">戌</div><div class="right">辰</div>
+                    <div class="dir">
+                        <div class="left">乾</div><div class="right">巽</div>
+                        <div class="dir">
+                            <div class="left">亥</div><div class="right">巳</div>
+                            <div class="dir">
+                                <div class="left">壬</div><div class="right">丙</div>
+                                <div class="dir">
+                                    <div class="left">子</div><div class="right">午</div>
+                                    <div class="dir">
+                                        <div class="left">癸</div><div class="right">丁</div>
+                                        <div class="dir">
+                                            <div class="left">丑</div><div class="right">末</div>
+                                            <div class="dir">
+                                                <div class="left">艮</div><div class="right">坤</div>
+                                                <div class="dir">
+                                                    <div class="left">寅</div><div class="right">申</div>
+                                                    <div class="dir">
+                                                        <div class="left">甲</div><div class="right">庚</div>
+                                                        <div class="dir">
+                                                            <div class="left">卯</div><div class="right">酉</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zodiac">
+                <div class="dir">
+                    <div class="left">狗</div><div class="right">龙</div>
+                    <div class="dir">
+                        <div class="left">猪</div><div class="right">蛇</div>
+                        <div class="dir">
+                            <div class="left">鼠</div><div class="right">马</div>
+                            <div class="dir">
+                                <div class="left">牛</div><div class="right">羊</div>
+                                <div class="dir">
+                                    <div class="left">虎</div><div class="right">猴</div>
+                                    <div class="dir">
+                                        <div class="left">兔</div><div class="right">鸡</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="yinyang_fish">
+                    <div class="yang_fish">
+                    </div>
+                    <div class="yin_fish">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!--bigbagua end-->
+{% endblock %}

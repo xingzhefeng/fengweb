@@ -1,0 +1,12 @@
+{% extends "myweb/views/templates/base.html" %}
+{% block content %}
+   <div>{{some}}</div>
+   <div>
+       {{creation-time|date:"yyyy-MM-dd HH:mm:ss"}}
+       {{now}}
+   </div>
+{% comment %}
+    这是注释.
+{% endcomment%}
+{% endblock %}
+
